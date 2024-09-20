@@ -3,16 +3,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 void main() {
-  runApp(CalendarScreen());
+  runApp(ScheduleAppointment2());
 }
 
-class CalendarScreen extends StatefulWidget {
-  const CalendarScreen({super.key});
+class ScheduleAppointment2 extends StatefulWidget {
+  const ScheduleAppointment2({super.key});
   @override
-  _CalendarScreenState createState() => _CalendarScreenState();
+  _ScheduleAppointment2State createState() => _ScheduleAppointment2State();
 }
 
-class _CalendarScreenState extends State<CalendarScreen> {
+class _ScheduleAppointment2State extends State<ScheduleAppointment2> {
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
   String? _selectedValue;
@@ -23,27 +23,36 @@ class _CalendarScreenState extends State<CalendarScreen> {
     return MaterialApp( home: Scaffold(
       appBar: AppBar(
         title:
-        Row(children: [
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            width: 32,
-            height: 32,
-            alignment: Alignment.center, // Centers the content inside the inner container
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: Color(0xFFE5E5E5),
+        Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              width: 32,
+              height: 32,
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xFFE5E5E5),
+              ),
+              child: SvgPicture.asset(
+                'assets/images/back.svg',
+                color: Colors.white,
+                width: 8.0,
+                height: 15,
+              ),
             ),
-            child: SvgPicture.asset(
-              'assets/images/back.svg',
-              color: Colors.white,
-              width: 8.0,
-              height: 15,
+            Spacer(),
+            Text(
+              'Book Appointment',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
             ),
-          ),
-        Center(child: Text('Book Appointment', style: TextStyle(fontWeight: FontWeight.bold),)),
-    ]
-    ),
+            Spacer(),
+          ],
+        ),
       ),
 
       body: Padding(
@@ -109,7 +118,21 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 disabledTextStyle: TextStyle(fontSize: 20, color: Colors.grey),
               ),
             ),
-            
+            SizedBox(height: 20,),
+
+          Container(
+            margin: EdgeInsets.only(right: 5, top: 15),
+            padding: EdgeInsets.only(top: 12, left: 25, bottom: 12, right:25),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black.withOpacity(35), width: 0.5),
+                color: Color(0x262E2E42).withOpacity(15),
+                borderRadius: BorderRadius.circular(50),
+            ),
+            child: Text("Tue, 16 Aug", style: TextStyle(fontSize: 12),),
+          ),
+
+            SizedBox(height: 20,),
+
             Align(
               alignment: Alignment.centerLeft,
               child:Text('Select time', textAlign: TextAlign.left,style: TextStyle(

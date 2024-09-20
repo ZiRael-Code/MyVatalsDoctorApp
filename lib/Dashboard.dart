@@ -175,22 +175,45 @@ class DashboardPage extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20),
-          Align(
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+            Align(
             alignment: Alignment.centerLeft,
             child:
           vital(
             themeColor: Color(0xFFFF618F),
-            vitalIcon: 'assets/images/hearth.svg',
+            vitalIcon: 'assets/images/hearth2.svg',
             vitalRead: '77',
             subcriptOrnot: 'bpm',
             isSubscript: true,
             vitalType: 'Heart rate (ECG)',
             dateAdded: 'Measured 10mins ago',
             vitalsReadMessage: 'NORMAL',
-            vitalsReadEmoji: 'assets/images/ecgEmoji.svg'
-
+            emoji: 'assets/images/smily.svg'
           ),
-          )
+          ),
+
+                SizedBox(width: 25,),
+
+                Align(
+            alignment: Alignment.centerLeft,
+            child:
+          vital(
+            themeColor: Colors.purple,
+            vitalIcon: 'assets/images/presure.svg',
+            vitalRead: '90/60',
+            subcriptOrnot: 'mmHg',
+            isSubscript: true,
+            vitalType: 'Blood pressure',
+            dateAdded: '5 days ago',
+            vitalsReadMessage: 'ABNORMAL',
+            emoji: 'assets/images/smily.svg'
+          ),
+          ),
+            ],)
+          ),
         ],
       ),
     );
@@ -248,7 +271,7 @@ class DashboardPage extends StatelessWidget {
     required String vitalType,
     required String dateAdded,
     required vitalsReadMessage,
-    required vitalsReadEmoji,
+    required emoji,
   }) {
     return Stack(
       children: [
@@ -260,94 +283,138 @@ class DashboardPage extends StatelessWidget {
           width: 1.5,
         ),
       ),
-      height: 271,
+      height: 275,
       width: 208,
-      child: Column(
+      margin: EdgeInsets.only(bottom: 10),
+      child:
+      Stack(
+        children: [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SvgPicture.asset('assets/images/backgroundVitals.svg')
-            // Align(
-            //   alignment: Alignment.centerRight,
-            //   child: Container(
-            //     width: 60,
-            //     height: 60,
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(50),
-            //         color: themeColor
-            //     ),
-            //     child: Center(child: SvgPicture.asset(vitalIcon)),
-            //   ),
-            // ),
-
-            // Row(
-            //   children: [
-            //     Text(vitalRead,
-            //       style: TextStyle(
-            //         fontSize: 50.0,
-            //         fontWeight: FontWeight.bold,
-            //         color: themeColor,
-            //       ),),
-            //
-            //     if (isSubscript)
-            //       Text(subcriptOrnot,
-            //         style: TextStyle(
-            //           fontSize: 8.0,
-            //           color: themeColor,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       )
-            //     else
-            //       Text(subcriptOrnot,
-            //         style: TextStyle(
-            //           fontSize: 16.0,
-            //           color: themeColor,
-            //         ),
-            //       ),
-            //   ],
-            // ),
-            // Container(
-            //   decoration: BoxDecoration(
-            //     image: const DecorationImage(
-            //       image: AssetImage('assets/images/backgroundVitals.png')
-            //     ),
-            //     color: themeColor
-            //   ),
-            //   child: Column(
-            //     children: [
-            // Text(vitalType,
-            // style: const TextStyle(
-            //   fontSize: 19.0,
-            //   color: Colors.white,
-            // ),
-            // ),
-            // Text(dateAdded, style: const TextStyle(
-            //   fontSize: 12.0,
-            //   color: Colors.white,
-            // )),
-            //
-            // Container(
-            //   decoration: BoxDecoration(
-            //     color: Colors.white.withOpacity(0.20),
-            //     borderRadius: BorderRadius.circular(24)
-            //   ),
-            //   padding: EdgeInsets.only(left: 5, top: 10, right: 5, bottom: 10),
-            //   child: Row(
-            //     children: [
-            //       SvgPicture.asset(vitalsReadEmoji),
-            //       Text(vitalsReadMessage,
-            //       style: TextStyle(
-            //         color: Colors.white,
-            //         fontSize: 12.0,
-            //       ),
-            //       )
-            //     ],
-            //   ),
-            // ),
-            //   ],
-            // ),
-            // ),
-          ],
+          Container(
+        child: SvgPicture.asset('assets/images/vital.svg', color: themeColor,),
+        alignment: Alignment.bottomCenter,
         ),
-      margin: EdgeInsets.only(bottom: 20),
+          ],
+      ),
+      Container(
+        padding: EdgeInsets.only(left: 15,right: 15, top: 15),
+        child: Column(
+            children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: themeColor
+              ),
+              child: Center(child: SvgPicture.asset(vitalIcon)),
+            ),
+          ),
+
+            Row(
+              children: [
+                Text(vitalRead,
+                  style: TextStyle(
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.bold,
+                    color: themeColor,
+                  ),),
+
+                if (isSubscript)
+                  Text(subcriptOrnot,
+                    style: TextStyle(
+                      fontSize: 11.0,
+                      color: themeColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                else
+                  Text(subcriptOrnot,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: themeColor,
+                    ),
+                  ),
+              ],
+            ),
+            SizedBox(height: 40,),
+
+            Align(child: Text(vitalType,
+              style: const TextStyle(
+                fontSize: 19.0,
+                color: Colors.white,
+              ),
+              ),
+              alignment: Alignment.centerLeft,
+                ),
+              SizedBox(height: 5,),
+            Align(child:
+            Text(dateAdded, style: const TextStyle(
+              fontSize: 12.0,
+              color: Colors.white,
+            )),
+              alignment: Alignment.centerLeft,
+            ),
+              SizedBox(height: 5,),
+            Align(child:
+            IntrinsicWidth(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.20),
+                    borderRadius: BorderRadius.circular(18)
+                ),
+                padding: EdgeInsets.only(left: 10, top: 10, right: 5, bottom: 10),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(emoji, ),
+                    SizedBox(width: 5,),
+                    Text(vitalsReadMessage,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+              alignment: Alignment.centerLeft,
+            )
+
+
+
+
+
+          ],),
+    )
+
+          // Container(
+          //   decoration: BoxDecoration(
+          //     image: const DecorationImage(
+          //       image: AssetImage('assets/images/backgroundVitals.png')
+          //     ),
+          //     color: themeColor
+          //   ),
+          //   child: Column(
+          //     children: [
+          //
+          //
+
+          //   ],
+          // ),
+          // ),
+
+
+
+          ],)
+
+
+
+      // margin: EdgeInsets.only(bottom: 20),
     ),
     ],
     );

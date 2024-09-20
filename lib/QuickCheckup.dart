@@ -11,6 +11,39 @@ class QuickCheckup extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+            title: Row(
+              children: [
+                Container(
+                  width: 35,
+                  height: 35,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xFFE5E5E5),
+                  ),
+                  child: SvgPicture.asset('assets/images/back.svg',
+                    width: 8.0,
+                    height: 15,),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 35),
+                  alignment: Alignment.center,
+                  child:
+                Text(
+                  'Take a quick checkup',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.normal
+                  ),
+                ),
+
+                ),
+
+              ],
+            )
+        ),
         backgroundColor: Colors.white,
         body: QuickCheckupPage(),
       ),
@@ -28,28 +61,7 @@ class QuickCheckupPage extends StatelessWidget{
       child: Column(
         children: [
           SizedBox(height: 50,),
-          Row(
-            children: [
-              Container(
-                width: 45,
-                height: 45,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
-                ),
-                child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
-              ),
-              SizedBox(width: 20),
-              Text(
-                'Take a quick checkup',
-                style: TextStyle(fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
+
           SizedBox(height: 30,),
         Container(
           width: 228,
