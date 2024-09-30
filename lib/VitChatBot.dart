@@ -42,9 +42,11 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
                 child:
                 Row(
                   children: [
-                    SvgPicture.asset("assets/images/bot.svg"),
+                    Image.asset("assets/images/vit.jpg"),
+                    SizedBox(width: 10),
                     Column(
                       children: [
+
                         Row(children: [
                         Text(
                           'Vit the Chatbot',
@@ -57,7 +59,12 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
                           SvgPicture.asset("assets/images/verified.svg")
                         ],),
                       SizedBox(height: 8,),
-                        Row(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child:
                         Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -66,6 +73,8 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
                           width: 11,
                           height: 11,
                         ),
+                        ),
+
                           SizedBox(width: 7,),
                           Text(
                             'Active now',
@@ -87,45 +96,152 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
           centerTitle: true,
         ),
         body: Container(
+          padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
           child: Column(
             children: [
               SizedBox(height: 20),
               Text("Wed 8:21 AM"),
-              SizedBox(height: 20),
+              SizedBox(height: 70),
 
-              Align(
-                alignment: Alignment.centerLeft,
-                child:
-              Stack(children: [
-                SvgPicture.asset("assets/images/chat.svg"),
-                Container(
-                child: Text(
-                  "Hello, I’m Vit! 😁👋 How can I help you?",
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-              ],),
-        ),
-              Align(
-                alignment: Alignment.centerRight,
-                child:
-              Stack(
+           incomingMessage(
+               text: 'Hello, I’m Vit! 😁👋 How can I help you?'),
+              SizedBox(height: 40,),
+              outGoingMessage(text: "How do I use my device?"),
+
+              Spacer(),
+              Row(
                 children: [
-                SvgPicture.asset("assets/images/chat1.svg"),
-                Container(
-                child: Text(
-                  "How do I use my device?",
-                  style: TextStyle(fontSize: 14),
-                ),
+                  // TextField
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Type a message...',
+                        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: BorderSide(
+                            color: Color(0x66BFBFBF),
+                            width: 0.5,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: BorderSide(
+                            color: Color(0x66BFBFBF),
+                            width: 0.5,
+                          ),
+                        ),
+                        suffixIcon: Container(
+                          width: 96,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                icon: Icon(Icons.attach_file, color: Colors.grey),
+                                onPressed: () {
+                                },
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.mic, color: Colors.grey),
+                                onPressed: () {
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 10),
+
+                  Container(
+                    width: 51,
+                    height: 51,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.add, color: Colors.white),
+                  ),
+                ],
               ),
 
-              ],),
-        ),
             ],
           ),
 
         ),
 
       ));
+
+
   }
+  incomingMessage({
+  required String text,
+}){
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Color(0xFFF2F4F5),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                topLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+            ),
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+
+  }
+
+outGoingMessage({
+  required String text,
+}){
+  return Align(
+    alignment: Alignment.centerRight,
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Color(0xFF3C8AFF),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            ),
+          ),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+
+
+
+
 }
