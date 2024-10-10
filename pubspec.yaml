@@ -35,7 +35,7 @@ dependencies:
   flutter_rating_bar: ^4.0.0  # For star rating bars
   table_calendar: ^3.1.2
   cupertino_icons: ^1.0.8  # Common Cupertino icons used in iOS designs
-
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +57,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/doc.png
+    - assets/images/doc1.png
+    - assets/images/pharm1.jpeg
+    - assets/images/pharm2.jpeg
+    - assets/images/host1.jpeg
+    - assets/images/host2.png
+    - assets/images/host3.png
     - assets/images/notification.svg
     - assets/images/rema.png
     - assets/images/cuate.png

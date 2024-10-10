@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'Summary.dart';
+import 'AppointmentPaymentSummary.dart';
 
 void main(){
   runApp(AddedAccountSucess());

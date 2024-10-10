@@ -123,8 +123,8 @@ class SummaryPage extends StatelessWidget{
            TextButton(
              onPressed: () {},
              style: TextButton.styleFrom(
-               padding: EdgeInsets.zero, // Removes padding around the button
-               minimumSize: Size(0, 0),  // Ensures no minimum size is enforced
+               padding: EdgeInsets.zero,
+               minimumSize: Size(0, 0),
              ),
              child: Text(
                'See all',
