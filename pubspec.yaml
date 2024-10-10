@@ -64,6 +64,7 @@ flutter:
     - assets/images/host1.jpeg
     - assets/images/host2.png
     - assets/images/host3.png
+    - assets/images/presphone.png
     - assets/images/notification.svg
     - assets/images/rema.png
     - assets/images/cuate.png
