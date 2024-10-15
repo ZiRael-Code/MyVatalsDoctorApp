@@ -155,6 +155,8 @@ class _VitalReadingsScreenState extends State<VitalReadingsScreen>
                     dateAdded: '5 days ago',
                     vitalsReadMessage: 'ABNORMAL',
                   ),
+
+
                 ],
               ),
             ),
@@ -303,6 +305,21 @@ class _VitalReadingsScreenState extends State<VitalReadingsScreen>
             name: "Device 3",
             imagePath: "assets/images/dev.svg"
           ),
+          SizedBox(width: 20,),
+          Column(
+              children: [
+                Container(
+                  width: 73,
+                  height: 73,
+                  decoration: BoxDecoration(
+                    color: Color(0xffE2EDFF),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Icon(Icons.add, color: Colors.blue, size: 32,),
+                ),
+                Text('Order for a new device')
+              ]
+          )
 ],)
         ],),
 

@@ -15,7 +15,7 @@ class AppointmentPayment extends StatefulWidget {
 }
 
 class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTickerProviderStateMixin {
-  late TabController _tabController = TabController(length: 2, vsync: this);
+  late TabController _tabController = TabController(length: 3, vsync: this);
 
   @override
   Widget build(BuildContext context) {
