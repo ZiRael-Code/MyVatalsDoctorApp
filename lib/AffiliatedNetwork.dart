@@ -205,7 +205,6 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                 children: [
                   Text(name, style: TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
                   SizedBox(height: 5,),

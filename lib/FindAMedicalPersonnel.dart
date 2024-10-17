@@ -68,7 +68,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
-        Align(child: Text("You vital readings are being shared with your personal physician.", textAlign: TextAlign.center,
+        Align(child: Text("You do are not affiliated with any physician, hospital or pharmacy yet. Connect with a medical personnel so you can share your vital readings with them.", textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 14,
         ),
@@ -76,37 +76,27 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
         ),
         ),
 
-        SizedBox(height: 35),
+        Spacer(),
+        SvgPicture.asset('assets/images/lady.svg'),
+        Spacer(),
 
-        Container(
-          padding: EdgeInsets.all(10),
-          width: MediaQuery.of(context).size.width,
-          height: 80,
-          child: Row(
-            children: [
-              Image.asset('assets/images/dr_profile.png',
-                width: 56,
-                height: 56,
-              ),
-              SizedBox(width: 15,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-                  SizedBox(height: 5,),
-                  Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
-                ],
-              ),
-            ],
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(9),
+            ),
           ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(color:  Colors.black.withOpacity(0.1)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            child: Text(
+              'Find a medical Personnel',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
           ),
         ),
-
-
       ],
     ),
     ))));

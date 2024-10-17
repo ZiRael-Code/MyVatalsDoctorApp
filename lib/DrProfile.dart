@@ -270,6 +270,30 @@ class DrProfilePage extends StatelessWidget {
                 ),
                     SizedBox(height: 20,),
 
+
+
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child:
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                        child: Text(
+                          'Request to be a patient',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+              ),
+                    SizedBox(height: 20,),
                 ],
                 ),
               ),
@@ -390,6 +414,37 @@ width: 1.5,
       width: 50,
       height: 50,
       margin: EdgeInsets.only(right: 10),
+    );
+}
+
+request_to_be_a_patient(){
+    return Column(
+      children: [
+        SvgPicture.asset('assets/image/donearrow.svg'),
+        Text('Request sent to Dr. Muiz. When they agrees to be your physician, you will be notified', textAlign: TextAlign.center,),
+        SizedBox(height: 15,),
+        SizedBox(
+          width: double.infinity,
+          child:
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(9),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            child: Text(
+              'Ok, got it',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+        ),
+
+      ],
     );
 }
 }
