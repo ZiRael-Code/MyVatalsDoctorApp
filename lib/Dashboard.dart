@@ -212,8 +212,11 @@ class DashboardPage extends StatelessWidget {
             emoji: 'assets/images/smily.svg'
           ),
           ),
-            ],)
+            ],),
           ),
+          SizedBox(height: 15,),
+          SvgPicture.asset('assets/images/scroller.svg')
+          ,SizedBox(height: 15,),
         ],
       ),
     );
