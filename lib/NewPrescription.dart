@@ -57,25 +57,28 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: 30, left: 20, right: 20),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 30),
         info(
           type: 'Name',
           des: '12/06/2022-Prescription'
         ),
+        SizedBox(height: 14,),
         info(
           type: 'Prescribed by:',
           des: 'Dr. Muiz Sanni'
         ),
+        SizedBox(height: 14,),
         info(
           type: 'Date',
           des: '12/06/2022-Prescription'
         ),
+        SizedBox(height: 14,),
         SizedBox(height: 25,),
         drug(
           name: 'Ibuprofen',
@@ -97,7 +100,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
           children: [
             Text('TOTAL:'),
             Spacer(),
-            Text('N3,200', style: TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold)),
+            Text('N3,200', style: TextStyle(fontSize: 20, color: Colors.blue, fontWeight: FontWeight.bold)),
           ],
         ),
         Spacer(),
@@ -134,7 +137,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
       children: [
         Text(type, style: TextStyle(fontSize: 14, color: Color(0xff666666))),
         Spacer(),
-        Text(des, style: TextStyle(fontSize: 16)),
+        Text(des, style: TextStyle(fontSize: 16, color: Colors.black)),
       ],
     ),
         SizedBox(height: 12),
@@ -148,18 +151,20 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
     required String qty,
 }){
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text(name),
+            Text(name, style: TextStyle(fontSize: 16)),
             Spacer(),
-            Text(price),
+            Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           ],
         ),
         SizedBox(height: 10),
         Text(qty,style: TextStyle(color:  Color(0xff666666)))
       ,SizedBox(height:15),
-      SvgPicture.asset('assets/images/line.svg')
+      SvgPicture.asset('assets/images/line.svg', fit: BoxFit.fitWidth,)
         ,SizedBox(height:10),
       ],
     );

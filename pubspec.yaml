@@ -58,10 +58,12 @@ flutter:
   assets:
     - assets/images/
     - assets/images/doc.png
+    - assets/images/name.png
     - assets/images/doc1.png
     - assets/images/pharm1.jpeg
     - assets/images/pharm2.jpeg
     - assets/images/host1.jpeg
+    - assets/images/family.png
     - assets/images/host2.png
     - assets/images/host3.png
     - assets/images/presphone.png

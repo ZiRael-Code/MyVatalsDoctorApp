@@ -93,6 +93,7 @@ SizedBox(height: 30,),
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
+            textStyle: TextStyle(color: Colors.white),
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
@@ -116,6 +117,8 @@ SizedBox(height: 30,),
     required String name,
     required String usage}) {
     return Container(
+      padding: EdgeInsets.all(16),
+      width: double.infinity,
       margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
@@ -125,6 +128,8 @@ SizedBox(height: 30,),
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(name, style: TextStyle(fontSize: 16),),
           SizedBox(height: 8,),

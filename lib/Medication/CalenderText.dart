@@ -81,7 +81,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
             onDaySelected: (selectedDay, focusedDay) {
               // Do not change the selected day
               setState(() {
-                _focusedDay = focusedDay; // Update focused day only
+                _focusedDay = focusedDay; 
               });
             },
             calendarStyle: CalendarStyle(

@@ -72,21 +72,20 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
                 Text('You prescriptions have been exhausted'),
                 SizedBox(height: 20,),
                 SizedBox(
-                  width: 242,
+                  // width: 242,
                  child:  ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
-                      fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
                       child: Text(
                         'Order new medications',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ),

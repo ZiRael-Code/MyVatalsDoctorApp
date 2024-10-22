@@ -76,7 +76,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
         info(type: 'Delivery fee', des: 'N1000'),
         SizedBox(height: 12,),
         SvgPicture.asset('assets/images/line.svg'),
-        SizedBox(height: 8,),
+        SizedBox(height: 12,),
         Row(
           children: [
             Text('TOTAL', style: TextStyle(color: Color(0xff666666)),),
@@ -84,9 +84,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
             Text('N4,2000', style: TextStyle(fontSize: 16, color: Colors.blue,fontWeight: FontWeight.bold)),
           ],
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: 12,),
         SvgPicture.asset('assets/images/line.svg'),
-        SizedBox(height: 10,),
+        SizedBox(height: 16,),
 
         deliverMethod(
             text: 'Not set yet',
@@ -143,14 +143,14 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
      Align(
        alignment: Alignment.centerLeft,
        child:
-      Text('Delivery Method', style: TextStyle(fontSize: 16)),
+      Text(header, style: TextStyle(fontSize: 16)),
     ),
       SizedBox(height: 20,),
       // SizedBox(height: 30,),
       // Spacer(),
       DottedBorder(
         color:  Colors.grey.withOpacity(0.70),
-        radius: Radius.circular(19),
+        radius: Radius.circular(14),
         dashPattern: [8, 6],
         borderType: BorderType.RRect,
         strokeWidth: 2,
@@ -174,6 +174,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
+                    textStyle: TextStyle(color: Colors.white),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
                     ),

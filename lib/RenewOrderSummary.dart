@@ -64,17 +64,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
       Column(
       children: [
         SizedBox(height: 30),
-        Container(
-          alignment: Alignment.center,
-          width: MediaQuery.of(context).size.width * 0.78,
-          child:
-        Align(child: Text("Your drugs are being processed by the pharmacy. When you’ve recieved them, click on the button below to start using them.", textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 14,
-        ),
-        ),
-        ),
-        ),
+
 SizedBox(height: 30,),
         info(
             type: 'Name',
@@ -90,14 +80,17 @@ SizedBox(height: 30,),
         ),
           SizedBox(height: 35,),
           drug(
+            price: 'N650',
               name: "Ibuprofen",
               usage: '1 pack: 1 pill(s). 2x daily'
           ),
           drug(
+            price: 'N1,500',
               name: "Cough syrup",
               usage: '1 bottle:  10ml. 3X daily'
           ),
           drug(
+              price: 'N3,250',
           name: "Paracetamol",
           usage: '1 pack:  3 pill(s) . 3X daily'
         ),
@@ -141,6 +134,7 @@ SizedBox(height: 30,),
     );
   }
   drug({
+    required String price,
     required String name,
     required String usage}) {
     return Container(
@@ -155,8 +149,16 @@ SizedBox(height: 30,),
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(name, style: TextStyle(fontSize: 16),),
+          Row(
+            children: [
+              Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+             Spacer(),
+              Text(price, style: TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold))
+            ],
+          ),
+          
           SizedBox(height: 8,),
           Text(usage, style: TextStyle(color: Color(0xff666666)))
         ],

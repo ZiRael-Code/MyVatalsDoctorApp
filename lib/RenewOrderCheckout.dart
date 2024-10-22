@@ -102,7 +102,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
         Container(
           height: 50,
           width: MediaQuery.of(context).size.width * 0.40,
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.only(left: 12, right: 12),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -112,9 +112,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('See details'),
+                Text('See details', style: TextStyle(color: Colors.blue),),
                 SizedBox(width: 10,),
-                Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue,),
+                Icon(Icons.keyboard_arrow_down, color: Colors.blue,),
               ],
           )
         ),
@@ -132,9 +132,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> {
         SizedBox(height: 20,),
         Row(
           children: [
-            Text('No. of medications:', style: TextStyle(color: Color(0xff666666))),
+            Text('price', style: TextStyle(color: Color(0xff666666))),
             Spacer(),
-            Text('3 drugs', style: TextStyle(color: Colors.blue),
+            Text('N5,350.00', style: TextStyle(color: Colors.blue),
             )],
         ),
         SizedBox(height: 20,),

@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           SizedBox(height: 20.0),
           const Align(
-            alignment: Alignment.centerLeft,
+    alignment: Alignment.centerLeft,
             child: Text(
               'Username',
               style: TextStyle(
