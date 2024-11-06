@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a href="https://flutter.dev/">
   <h1 align="center">
     <picture>
@@ -122,3 +123,23 @@ Information on how to get started can be found in our
 [platform channels]: https://docs.flutter.dev/development/platform-integration/platform-channels
 [interop example]: https://github.com/flutter/flutter/tree/main/examples/platform_channel
 [Impeller]: https://docs.flutter.dev/perf/impeller
+=======
+# flutter_app
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+"# onbrardinG" 
+"# MyVitals" 
+>>>>>>> ff7cf481574cce3b669eff2da059a93f243c715d
